@@ -1,3 +1,8 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, forest;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
