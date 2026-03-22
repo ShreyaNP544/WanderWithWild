@@ -1,35 +1,42 @@
+import { Mountain, Search } from "lucide-react"
+
 function Home() {
   return (
-    <div>
-      <div className="home-navbar">
-        <div className="home-navbar-left">
-          <div className="logo">Wander With Wild</div>
+    <div className="flex flex-col gap-5 px-10 py-5">
+      <div className="home-navbar flex justify-between items-center">
+        <div className="home-navbar-left flex gap-5 items-center">
+          <Mountain size={15} fill='#ffffff' stroke='#ffffff'/>
+          <span className="text-white text-lg">Wander With Wild</span>
           
-          <div className="navbar-items">
+          <div className="navbar-items flex gap-5 items-center text-sm">
             <span className="navbar-items-item">Explore</span>
             <span className="navbar-items-item">Archive</span>
             <span className="navbar-items-item">Community</span>
           </div>
         </div>
         
-        <div className="home-navbar-right">
-          <input placeholder="Search..."></input>
-          <div className="user-profile"></div>
-        </div>
+       <div className="relative flex items-center">
+        <Search size={14} className="absolute left-2 z-10 text-white pointer-events-none" />
+        <input type="text" placeholder="Find your next adventure..." className="input input-sm pl-7 w-60" />
+      </div>
       </div>
 
-      <div className="home-main-image">
-        <span className="home-main-image-badge">New Season Open</span>
+      <div className="home-main-image w-full h-125 flex bg-cover bg-center bg-no-repeat rounded-xl"
+        style={{ backgroundImage: "url('/src/assets/img-1.jpg')" }}>
+        
+        <div className="bg-black/40 h-full w-full flex flex-col justify-center items-start gap-5 px-10 py-8">
+          <span className="home-main-image-badge bg-[#d56113]/20 text-[#f06f33] border-2 border-[#ac4006] text-sm rounded-full px-2 py-1 ">NEW SEASON OPEN</span>
 
-        <span className="home-main-image-title">
-          <h2>Adventure awaits in the great WILD</h2>
-        </span>
+          <span className="home-main-image-title text-white font-bold text-5xl">
+            <h2>Adventure Awaits In <br /> The Great WILD</h2>
+          </span>
 
-        <span className="home-main-image-description">
-          <p>Discover your next unforgettable experience with us. Explore the world, one adventure at a time.</p>
-        </span>
+          <span className="home-main-image-description text-xl text-white">
+            <p>Discover your next unforgettable experience with us. Explore the world, one adventure at a time.</p>
+          </span>
 
-        <button className="home-main-image-button">View Featured Treks</button>
+          <button className="btn bg-[#FF9900] text-black border-[#e17d00]">View Featured Treks</button>
+        </div>
       </div>
 
       <div className="home-trek-cards">
